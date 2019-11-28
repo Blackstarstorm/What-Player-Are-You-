@@ -19,7 +19,7 @@
 ### Maybe an api 
 
 ## ERD
-![image](Screen Shot 2019-11-27 at 9.31.27 PM.png) 
+![image](https://github.com/Blackstarstorm/What-Player-Are-You-/blob/master/Screen%20Shot%202019-11-27%20at%209.31.27%20PM.png) 
 
 ## Components
 ### LoginForm
