@@ -7,7 +7,7 @@
 
 ![](https://media.giphy.com/media/TTy5YmVmhmWhq/giphy.gif)
 
-##MVP
+## MVP
 ### Getting the quiz to hold your score
 ### Getting a game genre to render after the quiz
 ### Getting a list of game genres and games
