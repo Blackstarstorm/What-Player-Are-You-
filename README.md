@@ -19,7 +19,7 @@
 ### Maybe an api 
 
 ## ERD
-![](Screen Shot 2019-11-27 at 9.31.27 PM.png) 
+![image](Screen Shot 2019-11-27 at 9.31.27 PM.png) 
 
 ## Components
 ### LoginForm
