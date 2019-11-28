@@ -19,7 +19,7 @@
 ### Maybe an api 
 
 ##ERD
-![](/Users/winstonmeikle/Desktop/Screen Shot 2019-11-27 at 9.31.27 PM.png)
+![](Screen Shot 2019-11-27 at 9.31.27 PM.png)
 
 ##Components
 ### LoginForm
