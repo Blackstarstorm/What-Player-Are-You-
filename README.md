@@ -51,7 +51,7 @@
 |(B.E.) Models| 30 min|
 |Seed Data| 2.5 hr|
 |Endpoints(Routes)| 1.5 hr|
-|Cors|10 min|
+|Cors|5 min|
 |Controllers|1.75 hr|
 
 
