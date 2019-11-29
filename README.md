@@ -37,3 +37,21 @@
 ![](https://github.com/Blackstarstorm/What-Player-Are-You-/blob/master/Screen%20Shot%202019-11-28%20at%202.02.11%20PM.png)
 ![](https://github.com/Blackstarstorm/What-Player-Are-You-/blob/master/Screen%20Shot%202019-11-28%20at%202.02.30%20PM.png)
 ![](https://github.com/Blackstarstorm/What-Player-Are-You-/blob/master/Screen%20Shot%202019-11-27%20at%209.31.27%20PM.png)
+
+## Endpoint(routes)
+### game genre
+### game genre(id)
+### games
+### games by game genre(id)
+
+## TimeFrame
+
+|Compenent|Estimated Time|
+|:---| :---: |
+|(B.E.) Models| 30 min|
+|Seed Data| 2.5 hr|
+|Endpoints(Routes)| 1.5 hr|
+|Cors|10 min|
+|Controllers|1.75 hr|
+
+
