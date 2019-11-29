@@ -1,8 +1,8 @@
 # What-Player-Are-You?
 
-### Some people just render me of a game genewand sometimes I wonder what kind of genre who represent myself. Some site/apps have test to see what character you are close to, so why can't there be on for game genres?
+### Some people just render me of a game gene and sometimes I wonder what kind of genre would best represent myself. Some site/apps have test to see what character you are close to, so why can't there be on for game genres?
 
-### This app will let user take a quiz and  get result telling you want game genre you're most like, why you might enjoy this genre and some games associated with it.
+### This app will let user take a quiz and after getting a result back you'll know which game genre you're most like, why you might enjoy this genre and some games associated with it.
 
 
 ![](https://media.giphy.com/media/TTy5YmVmhmWhq/giphy.gif)
