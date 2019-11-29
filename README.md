@@ -4,6 +4,8 @@
 
 ### This app will let user take a quiz and after getting a result back you'll know which game genre you're most like, why you might enjoy this genre and some games associated with it.
 
+### !!!!!!Not all game genres will be in this quiz sadly since there are a lot of genres/sub-genres/hybrid-genres. Forgive me I love gaming, but it would get messy and crazy if all genres where in here. I will have more of an umbrella term with the genres
+
 
 ![](https://media.giphy.com/media/TTy5YmVmhmWhq/giphy.gif)
 
@@ -27,7 +29,7 @@
 ### QuizForm
 ### GameGenreForm
 ### GamesForm
-### EditGames
+### EditGamesForm
 ### ScoreForm 
 
 ## WireFrames
