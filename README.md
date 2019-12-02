@@ -46,6 +46,14 @@
 ### games
 ### games by game genre(id)
 
+## Framework
+### React
+### Ruby on Rails
+
+## Dependencies
+### react-router-dom
+### axios
+
 ## TimeFrame
 
 |Compenent|Estimated Time|
