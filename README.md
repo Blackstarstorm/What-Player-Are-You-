@@ -10,27 +10,27 @@
 ![](https://media.giphy.com/media/TTy5YmVmhmWhq/giphy.gif)
 
 ## MVP
-### Getting the quiz to hold your score
-### Getting a game genre to render after the quiz
-### Getting a list of game genres and games
-### Letting user do CRUD to games in game genre
+### * Getting the quiz to hold your score
+### * Getting a game genre to render after the quiz
+### * Getting a list of game genres and games
+### * Letting user do CRUD to games in game genre
 
 ## Post-MVP
-### Styling
-### Some sound
-### Maybe an api 
+### * Styling
+### * Some sound
+### * Maybe an api 
 
 ## ERD
 ![](https://github.com/Blackstarstorm/What-Player-Are-You-/blob/master/Screen%20Shot%202019-11-28%20at%208.45.24%20PM.png) 
 
-## Components
-### LoginForm
-### RegisterForm
-### QuizForm
-### GameGenreForm
-### GamesForm
-### EditGamesForm
-### ScoreForm 
+##  * Components
+### * LoginForm
+### * RegisterForm
+### * QuizForm
+### * GameGenreForm
+### * GamesForm
+### * EditGamesForm
+### * ScoreForm 
 
 ## WireFrames
 ![](https://github.com/Blackstarstorm/What-Player-Are-You-/blob/master/Screen%20Shot%202019-11-28%20at%202.01.17%20PM.png)
@@ -40,19 +40,19 @@
 ![](https://github.com/Blackstarstorm/What-Player-Are-You-/blob/master/Screen%20Shot%202019-11-27%20at%209.31.27%20PM.png)
 ![](https://github.com/Blackstarstorm/What-Player-Are-You-/blob/master/Screen%20Shot%202019-11-28%20at%201.58.50%20PM.png)
 
-## Endpoint(routes)
-### game genre
-### game genre(id)
-### games
-### games by game genre(id)
+##  Endpoint(routes)
+### * game genre
+### * game genre(id)
+### * games
+### * games by game genre(id)
 
 ## Framework
-### React
-### Ruby on Rails
+### * React
+### * Ruby on Rails
 
 ## Dependencies
-### react-router-dom
-### axios
+### * react-router-dom
+### * axios
 
 ## TimeFrame
 
