@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  genre: MyString
+  description: MyText
+  facts: MyText
+  game: MyString
+  img_url: MyText
+
+two:
+  genre: MyString
+  description: MyText
+  facts: MyText
+  game: MyString
+  img_url: MyText
