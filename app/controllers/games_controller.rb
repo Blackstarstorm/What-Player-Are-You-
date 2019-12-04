@@ -9,11 +9,12 @@ class GamesController < ApplicationController
   end
 
   def index_by_game_genre
-    # endpoint = '/games/:game_genre_id/games'
+    # endpoint = '/game_genre/:game_genre_id/games'
     @game_genre = GameGenre.find(params[:game_genre_id])
     @games = @game_genre.games
     render json: @games, include: :game_genre, status: :ok
   end
+
 
   # GET /games/1
   def show

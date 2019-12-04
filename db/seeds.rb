@@ -117,25 +117,25 @@ GenreImage.create([
     img_url: "https://res.cloudinary.com/dvysqqdqe/image/upload/v1575306511/394bbeae8a82e614b28c216bd36facb8_qm05am.png",
     game_genre: genres[0]
   },{
-    img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575306902/capsule_616x353_qjtuq5.jpg",
+    img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575484432/Dark-Souls-Remastered-Transparent-PNG_sycupp.png",
     game_genre: genres[0]
   },{
-    img_url: "https://res.cloudinary.com/dvysqqdqe/image/upload/v1575307311/0d4fe667aae6754dcf7afbaa6a2849267eebc2e1_fpzwbh.jpg",
+    img_url: "https://res.cloudinary.com/dvysqqdqe/image/upload/v1575484600/143-1437863_skyrim-logo-elder-scrolls-v-skyrim_c2i56q.png",
     game_genre: genres[0]
   },{
-    img_url: "https://res.cloudinary.com/dvysqqdqe/image/upload/v1575312279/4d2780c1bf417187193df59786f2f4ff_grdqtf.jpg",
+    img_url: "https://res.cloudinary.com/dvysqqdqe/image/upload/v1575484681/580b57fcd9996e24bc43c341_bn3d1f.png",
     game_genre: genres[1]
   },{
     img_url: "https://res.cloudinary.com/dvysqqdqe/image/upload/v1575312614/2000_cvtgpz.png",
     game_genre: genres[1]
   },{
-    img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575312534/super-smash-brothers-nintendo-switch01-logo_zpdx0b.jpg",
+    img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575485015/hd-super-smash-bros-ultimate-logo-png-free-unlimited-download-super-smash-bros-ultimate-logo-png-1201_603_ypauj8.png",
     game_genre: genres[1]
   },{
     img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575312770/bb0b74c367af090e22fd60dbb85f999e_puasbo.png",
     game_genre: genres[1]
   },{
-    img_url: "https://res.cloudinary.com/dvysqqdqe/image/upload/v1575314978/Super_Mario_Bros._Logo_k0ol4j.svg",
+    img_url: "https://res.cloudinary.com/dvysqqdqe/image/upload/v1575485215/640px-Super_Mario_Bros._Logo.svg_a2naxk.png",
     game_genre: genres[2]
   },{
   img_url: "https://res.cloudinary.com/dvysqqdqe/image/upload/v1575315085/latest_tlkj9j.png",
@@ -150,31 +150,31 @@ GenreImage.create([
   img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575319498/H2x1_CharacterHub_Metroid_image1600w_rbvblu.jpg",
   game_genre: genres[2]
   },{
-    img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575315977/Guitar-Hero-Logo_ufjuis.jpg",
+    img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575485416/5d8ed76a74d8df428bf2f152f223032d_cqzh5e.png",
     game_genre: genres[3]
   },{
   img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575316047/53294_libjmn.png",
   game_genre: genres[3]
   },{
-  img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575316134/H2x1_NSwitchDS_JustShapesAndBeats_image1600w_djgy1r.jpg",
+  img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575485518/67-679044_jsb-logo-ondarkbg-02-just-shapes-and-beats_ngkydy.png",
   game_genre: genres[3]
   },{
     img_url: "https://res.cloudinary.com/dvysqqdqe/image/upload/v1575320918/god-of-war-png-god-of-war-png-1439_vawiqh.png",
     game_genre: genres[4]
   },{
-    img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575321009/210-2107518_playstation-shadow-of-colossus-logo_cjnjap.jpg",
+    img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575485624/210-2107518_playstation-shadow-of-colossus-logo_vrrf0t.png",
     game_genre: genres[4]
   },{
     img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575321079/5852c19358215f0354495f4e_hislte.png",
     game_genre: genres[4]
   },{
-    img_url: "https://res.cloudinary.com/dvysqqdqe/image/upload/v1575322764/halo_miavxa.svg",
+    img_url: "https://res.cloudinary.com/dvysqqdqe/image/upload/v1575485861/halo-logo-png-image-31_ibmcxy.png",
     game_genre: genres[5]
   },{
   img_url: "https://1000logos.net/wp-content/uploads/2018/01/overwatch-logo.png",
   game_genre: genres[5]
   },{
-  img_url: "https://res.cloudinary.com/dvysqqdqe/image/upload/v1575323567/Destiny-Logo_iqw5mq.png",
+  img_url: "https://res.cloudinary.com/dvysqqdqe/image/upload/v1575486845/destiny-logo_0_sbhgwf.png",
   game_genre: genres[5]
   },{
     img_url: "https://res.cloudinary.com/dvysqqdqe/image/upload/v1575324437/250_ewooqt.png",
@@ -189,10 +189,10 @@ GenreImage.create([
     img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575325909/2000_n6kavk.png",
     game_genre: genres[7]
   },{
-    img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575326131/Gran_Turismo_logo_ruvcfd.png",
+    img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575486101/gran-turismo-png-gran-turismo-5-png-2362_epav8m.png",
     game_genre: genres[7]
   },{
-    img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575326622/c9130ac47eded6391761630e87207604_srymw6.jpg",
+    img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575486198/a38b6ea6-5f8f-43ca-bf8a-0e4c0fb16e0f_s6cbq3.png",
     game_genre: genres[7]
   }
 ])
