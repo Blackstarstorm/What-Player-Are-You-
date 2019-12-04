@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_03_005755) do
+ActiveRecord::Schema.define(version: 2019_12_03_202806) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,9 +18,6 @@ ActiveRecord::Schema.define(version: 2019_12_03_005755) do
   create_table "game_genres", force: :cascade do |t|
     t.string "genre"
     t.text "description"
-    t.text "facts", array: true
-    t.text "game", array: true
-    t.text "img_url", array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -31,7 +28,24 @@ ActiveRecord::Schema.define(version: 2019_12_03_005755) do
     t.text "img_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "genre_id"
+    t.bigint "game_genre_id", null: false
+    t.index ["game_genre_id"], name: "index_games_on_game_genre_id"
+  end
+
+  create_table "genre_facts", force: :cascade do |t|
+    t.text "fact"
+    t.bigint "game_genre_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_genre_id"], name: "index_genre_facts_on_game_genre_id"
+  end
+
+  create_table "genre_images", force: :cascade do |t|
+    t.text "img_url"
+    t.bigint "game_genre_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_genre_id"], name: "index_genre_images_on_game_genre_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -41,4 +55,7 @@ ActiveRecord::Schema.define(version: 2019_12_03_005755) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "games", "game_genres"
+  add_foreign_key "genre_facts", "game_genres"
+  add_foreign_key "genre_images", "game_genres"
 end
