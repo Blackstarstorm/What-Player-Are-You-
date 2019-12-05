@@ -147,10 +147,10 @@ GenreImage.create([
   img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575321205/804db7f23241664d01fdbeaa05f8c28a_apwz55.png",
   game_genre: genres[2]
   },{
-  img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575319498/H2x1_CharacterHub_Metroid_image1600w_rbvblu.jpg",
+  img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575485416/5d8ed76a74d8df428bf2f152f223032d_cqzh5e.png",
   game_genre: genres[2]
   },{
-    img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575485416/5d8ed76a74d8df428bf2f152f223032d_cqzh5e.png",
+    img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575500882/Guitar_hero_logo_i0wsgy.png",
     game_genre: genres[3]
   },{
   img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575316047/53294_libjmn.png",

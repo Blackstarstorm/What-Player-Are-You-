@@ -11,7 +11,7 @@ export default class RegisterForm extends React.Component {
   }
   render() {
     return (
-      <form onSubmit={(event) => {
+      <form className="sign-in" onSubmit={(event) => {
         event.preventDefault();
         this.props.handleRegister(this.state);
         this.setState({

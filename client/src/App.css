@@ -1,0 +1,38 @@
+.App{ 
+  text-align: center;
+}
+/* Header */
+header{
+  height: 5em;
+  background: green;
+}
+a#title{
+  text-decoration: none;
+}
+
+.log{
+  width: 10em;
+  border-radius: 4em;
+  padding: 2em;
+  margin: 0 auto;
+}
+
+/* Home */
+
+div#intro{
+  background: rgb(213, 210, 210);
+  border: 5px solid black;
+  width: 26em;
+  height: 26em;
+  margin: 0 auto;
+}
+#start{
+  border-radius: 7em;
+  padding: 2em;
+}
+
+/* Footer */
+footer{
+  background: hotpink;
+ 
+}

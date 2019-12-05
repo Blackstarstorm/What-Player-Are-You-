@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function EditGamesForm() {
+function GameGenreForm() {
   return (
     <div>
       
     </div>
   )
 }
+
+export default GameGenreForm
