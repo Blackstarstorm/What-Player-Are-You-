@@ -62,7 +62,7 @@ GenreFact.create([
     fact: "Single-player RPG franchises for home video consoles include Square Enix’s Dragon Quest (1986– ) and Final Fantasy (1987– ), for Nintendo and Sony consoles. Nintendo’s Pokémon (1995– ) series is the most successful RPG franchise in terms of total media sales.",
     game_genre: genres[0]
   },{
-    fact: "Most RPG games with have the player invents time to grind(leveling up), do side quest and do there best to complete the objectives give",
+    fact: "Most RPG games will have the player invents time to grind(leveling up), do side quest and do there best to complete the objectives given, usually leading to better rewards for the player.",
     game_genre: genres[0]
   },{
     fact:"The first fighting game, Heavyweight Champ, was designed in 1976.",

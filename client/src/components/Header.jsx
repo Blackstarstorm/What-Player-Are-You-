@@ -27,7 +27,7 @@ export default function Header(props) {
           </a>
           :
           <Link to="/login">
-            <button className="log">Login</button>
+            <button id="log_reg_button">Login/Register</button>
           </Link>
       }
     </nav>

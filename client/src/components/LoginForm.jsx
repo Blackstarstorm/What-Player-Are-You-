@@ -12,7 +12,7 @@ export default class LoginForm extends React.Component {
   }
   render() {
     return (
-      <form className="sign-in" onSubmit={(event) => {
+      <form  onSubmit={(event) => {
         event.preventDefault();
         this.props.handleLogin(this.state);
         this.setState({
@@ -20,6 +20,7 @@ export default class LoginForm extends React.Component {
           password: ""
         });
       }}>
+        <div className="sign-in">
         <h2>Login</h2>
         <label htmlFor="username">User Name:</label>
         <input
@@ -42,7 +43,8 @@ export default class LoginForm extends React.Component {
           Register</button>
         </Link>
         <br />
-        <p>{this.props.authErrorMessage}</p>
+          <p>{this.props.authErrorMessage}</p>
+          </div>
       </form>
     )
   }

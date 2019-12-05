@@ -3,36 +3,73 @@
 }
 /* Header */
 header{
+  position:fixed;
+  text-align: center;
+  top: 0;
   height: 5em;
   background: green;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
 }
 a#title{
   text-decoration: none;
 }
 
-.log{
-  width: 10em;
+#log_reg_button{
   border-radius: 4em;
   padding: 2em;
   margin: 0 auto;
 }
-
+/* Login */
+.sign-in{
+display: flex;
+flex-direction: column;
+margin-top: 8em;
+border: 2px solid black;
+padding: 5em;
+background: orange;
+}
 /* Home */
 
 div#intro{
   background: rgb(213, 210, 210);
   border: 5px solid black;
-  width: 26em;
-  height: 26em;
+  width: 34em;
+  height: 20em;
   margin: 0 auto;
+  margin-top: 8em;
+  box-shadow: 2px 2px black;
 }
 #start{
   border-radius: 7em;
   padding: 2em;
 }
+/* Genre Select */
+#select_genre{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2em;
+  margin: 0 auto;
+  width: 50%;
+  border: 2px solid black;
+  padding: 2em;
+  background: ;
+}
+
+#genre_title{
+  margin-top: 10em;
+}
 
 /* Footer */
 footer{
+  text-align: center;
+  font-weight: bold;
   background: hotpink;
- 
+  position:fixed;
+  width: 100%;
+ bottom:0;
 }

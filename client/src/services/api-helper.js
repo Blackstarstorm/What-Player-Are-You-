@@ -35,3 +35,50 @@ export const verifyUser = async () => {
   }
   return false;
 }
+//========Game Genre=====//
+export const getAllGameGenres = async () => {
+  const resp = await api.get('/game_genres');
+  return resp.data;
+}
+
+export const getOneGameGenre = async (id) => {
+  const resp = await api.get(`/game_genres/${id}`);
+  return resp.data;
+}
+//======== Game Facts=================//
+export const getGameGenreFacts = async (id) => {
+  const resp = await api.get(`/game_genres/${id}/genre_facts`);
+  return resp.data;
+}
+//========Game Title Image =============//
+
+export const getGameGenreImage = async (id) => {
+  const resp = await api.get(`/game_genres/${id}/genre_images`);
+  return resp.data;
+}
+//========CRUD GAMES=====//
+
+export const getAllGames = async () => {
+  const resp = await api.get('/games');
+  return resp.data;
+}
+
+export const getGenreGames = async (id) => {
+  const resp = await api.get(`/game_genres/${id}/games`);
+  return resp.data;
+}
+
+export const postGenreGame = async (gameData) => {
+  const resp = await api.post(`/game_genres/`, gameData);
+  return resp.data;
+}
+
+export const putGenreGame = async (id, gameData) => {
+  const resp = await api.put(`/game_genres/${id}/games`, gameData);
+  return resp.data;
+}
+
+export const deleteGenreGame = async (id) => {
+  const resp = await api.delete(`/game_genres/${id}/games`);
+  return resp.data;
+}

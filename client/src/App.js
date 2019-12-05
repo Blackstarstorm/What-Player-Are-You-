@@ -1,13 +1,14 @@
 import React from 'react';
 import './App.css';
-import axios from 'axios';
 import { Route, withRouter } from 'react-router-dom';
 import Home from './components/Home';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import LoginForm from './components/LoginForm';
 import RegisterForm from './components/RegisterForm';
-import { registerUser, loginUser, verifyUser } from './services/api-helper';
+import { registerUser, loginUser, verifyUser,getOneGameGenre, } from './services/api-helper';
+import GameGenreForm from './components/GameGenreForm';
+import SelectGenreForm from './components/SelectGenreForm'
 
 class App extends React.Component{
   constructor(props) {
@@ -59,7 +60,21 @@ class App extends React.Component{
   componentDidMount = async () => {
     await this.handleVerify
   }
-  
+  //////////HandleClick, HandleSubmit//////
+  handleClick = (event) =>
+  {
+    let radio = event.target.value
+    this.setState({
+    radio: radio
+    })
+  }
+  handleSubmit = async (event) => {
+    const game_genre = await getOneGameGenre
+      (this.state.radio)
+    this.setState({
+      game_genre
+    })
+  }
 
   render() {
   const { currentUser } = this.state;
@@ -91,7 +106,17 @@ class App extends React.Component{
       </header>
       
       <main>
-
+        <Route path='/select_genre' render={() => <SelectGenreForm radio={this.state.radio} handleClick={this.handleClick}
+          handleSubmit={this.handleSubmit}/>}
+        />
+        
+        <Route path="/genre" render={() => ( 
+          <GameGenreForm
+            genres={this.state.genres}
+            genre_fact={this.state.genre_fact}
+            genre_images={this.state.genre_images}
+          />
+        )}/>
       </main>
 
       <Footer />
