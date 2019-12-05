@@ -6,22 +6,23 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import LoginForm from './components/LoginForm';
 import RegisterForm from './components/RegisterForm';
-import { registerUser, loginUser, verifyUser,getOneGameGenre, } from './services/api-helper';
+import { registerUser, loginUser, verifyUser, getOneGameGenre, getAllGameGenres } from './services/api-helper';
 import GameGenreForm from './components/GameGenreForm';
 import SelectGenreForm from './components/SelectGenreForm'
+import Axios from 'axios';
 
-class App extends React.Component{
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       currentUser: null,
       authErrorMessage: "",
       game_genre: "",
-      game: []
-      
+      game: [],
+      game_genres: []
     }
   }
-//////////Login, Register, LogOut & Verify
+  //////////Login, Register, LogOut & Verify
   handleLogin = async (loginData) => {
     const currentUser = await loginUser(loginData);
     if (currentUser.error) {
@@ -59,13 +60,16 @@ class App extends React.Component{
 
   componentDidMount = async () => {
     await this.handleVerify
+    const game_genres = await getAllGameGenres()
+    this.setState({
+      game_genres
+    })
   }
   //////////HandleClick, HandleSubmit//////
-  handleClick = (event) =>
-  {
+  handleClick = (event) => {
     let radio = event.target.value
     this.setState({
-    radio: radio
+      radio: radio
     })
   }
   handleSubmit = async (event) => {
@@ -77,52 +81,54 @@ class App extends React.Component{
   }
 
   render() {
-  const { currentUser } = this.state;
-  return (
-    <div className="App">
-     <header> 
-      <Header 
-        currentUser={currentUser}
-        handleLogout={this.handleLogout}
-      />
-      <Route exact path="/" render={() => (
-          <Home
+    const { currentUser } = this.state;
+    return (
+      <div className="App">
+        <header>
+          <Header
             currentUser={currentUser}
-        />)} />
-      
-      <Route path="/login" render={() => (
-          <LoginForm
-            handleLogin={this.handleLogin}
-            authErrorMessage={this.state.authErrorMessage}
+            handleLogout={this.handleLogout}
           />
-        )} />
+          <Route exact path="/" render={() => (
+            <Home
+              currentUser={currentUser}
+            />)} />
 
-        <Route path="/register" render={() => (
-          <RegisterForm
-            handleRegister={this.handleRegister}
-            authErrorMessage={this.state.authErrorMessage}
-          />
-        )} />
-      </header>
-      
-      <main>
-        <Route path='/select_genre' render={() => <SelectGenreForm radio={this.state.radio} handleClick={this.handleClick}
-          handleSubmit={this.handleSubmit}/>}
-        />
-        
-        <Route path="/genre" render={() => ( 
-          <GameGenreForm
-            genres={this.state.genres}
-            genre_fact={this.state.genre_fact}
-            genre_images={this.state.genre_images}
-          />
-        )}/>
-      </main>
+          <Route path="/login" render={() => (
+            <LoginForm
+              handleLogin={this.handleLogin}
+              authErrorMessage={this.state.authErrorMessage}
+            />
+          )} />
 
-      <Footer />
-    </div>
-  );
+          <Route path="/register" render={() => (
+            <RegisterForm
+              handleRegister={this.handleRegister}
+              authErrorMessage={this.state.authErrorMessage}
+            />
+          )} />
+        </header>
+
+        <main>
+          <Route path='/select_genre' render={() => <SelectGenreForm
+            radio={this.state.radio}
+            handleClick={this.handleClick}
+            handleSubmit={this.handleSubmit}
+            game_genres={this.state.game_genres}
+          />}
+          />
+
+          <Route exact path="/genres/:genre_id" render={(props) => (
+            <GameGenreForm
+              genre_id={props.match.params.genre_id}
+            />
+          )} />
+        </main>
+
+        <Footer />
+      </div>
+    );
+  }
 }
-}
 
-export default withRouter (App);
+export default withRouter(App);

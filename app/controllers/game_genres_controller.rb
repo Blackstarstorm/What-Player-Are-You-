@@ -5,12 +5,12 @@ class GameGenresController < ApplicationController
   def index
     @game_genres = GameGenre.all
 
-    render json: @game_genres
+    render json: @game_genres, include: [:genre_facts, :genre_images]
   end
 
   # GET /game_genres/1
   def show
-    render json: @game_genre
+    render json: @game_genre, include: [:genre_facts, :genre_images]
   end
 
   # POST /game_genres

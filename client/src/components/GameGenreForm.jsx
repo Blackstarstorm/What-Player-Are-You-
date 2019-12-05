@@ -1,23 +1,47 @@
-import React from 'react'
+import React from 'react';
+import { getOneGameGenre } from '../services/api-helper';
 
-export default function GameGenreForm(props) {
-  return (
-    <div className='genre_type'>
+export default class GameGenreForm extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      genre: null
+    }
+  }
 
-      {
-        props.genres.map(genres => (
-        <>
-          <h2>"{props.genres.genre}"Genre</h2>
-          <h3>Description:{props.genres.description}
-          </h3>
-             props.genre_facts.map(facts => (
-             <h2>Facts:{props.facts.fact}</h2>
-               )) props.genre_images.map(image => (
-               <img src={props.image.img_url} />
-            ))
-        </>))  
-          }
+  async componentDidMount() {
+    console.log("test")
+    const genre = await getOneGameGenre(this.props.genre_id)
+    console.log(genre)
+    this.setState({
+      genre
+    })
+  }
 
-    </div>
-  )
+  render() {
+    const { genre } = this.state
+    console.log(genre)
+    return (
+      <div className='genre_type'>
+        {genre &&
+          <>
+            <h2>"{genre.genre}"Genre</h2>
+            <h3>Description:{genre.description}
+            </h3>
+            <h2>Facts:</h2>
+            {
+              genre.genre_facts.map(fact => (
+                <p>{fact.fact}</p>
+              ))
+            }
+            {
+              genre.genre_images.map(image => (
+                <img className="game_title" src={image.img_url} />
+              ))
+            }
+          </>
+        }
+      </div>
+    )
+  }
 }

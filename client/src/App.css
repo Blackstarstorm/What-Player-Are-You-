@@ -57,13 +57,17 @@ div#intro{
   width: 50%;
   border: 2px solid black;
   padding: 2em;
-  background: ;
+  /* background: ; */
 }
 
 #genre_title{
   margin-top: 10em;
 }
-
+/* Genre Selected */
+.game_title{
+  width: 100px;
+  height: 100px;
+}
 /* Footer */
 footer{
   text-align: center;
