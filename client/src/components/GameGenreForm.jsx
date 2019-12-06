@@ -11,9 +11,7 @@ export default class GameGenreForm extends React.Component {
   }
 
   async componentDidMount() {
-    console.log("test")
     const genre = await getOneGameGenre(this.props.genre_id)
-    console.log(genre)
     this.setState({
       genre
     })
@@ -21,7 +19,6 @@ export default class GameGenreForm extends React.Component {
 
   render() {
     const { genre } = this.state
-    console.log(genre)
     return (
       <div className='genre_type'>
         {genre &&
@@ -39,11 +36,11 @@ export default class GameGenreForm extends React.Component {
             {
             genre.genre_images.map(image => (
               <img className="game_title"
-                src={image.img_url} />
+                src={image.img_url} alt="video game titles"/>
               ))
           }
 
-          <Link to="/genres/:genre_id/games">
+          <Link to={`/genres/${genre.id}/games`}>
             <button>Games for this genre</button>
           </Link>
           </>

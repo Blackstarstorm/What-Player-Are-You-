@@ -73,6 +73,15 @@ div#intro{
   margin: 0 auto;
   width: 300px;
 }
+/* Game Genre Games */
+.game_pic{
+width: 30%;
+}
+#games{
+  max-height: 80vh;
+  overflow: scroll;
+  margin-top: 5em;
+}
 /* Footer */
 footer{
   text-align: center;

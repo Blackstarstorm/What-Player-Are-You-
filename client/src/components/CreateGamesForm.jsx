@@ -1,12 +1,10 @@
 import React from 'react'
 
 export default function CreateGamesForm(props) {
+  const { formData } = props;
   return (
     <div>
-       <form onSubmit={(event) => {
-        event.preventDefault();
-        props.createSubmit();
-      }}>
+      <form onSubmit={props.handleSubmit}>
          <label htmlFor="name">name</label>
         <input
           type="text"
@@ -15,7 +13,8 @@ export default function CreateGamesForm(props) {
           value={props.formData.name}
           onChange={props.handleChange}
         />
-             <label htmlFor="description">description</label>
+        <br />
+        <label htmlFor="description">description</label>
         <input
           type="text"
           name="description"
@@ -23,6 +22,7 @@ export default function CreateGamesForm(props) {
           value={props.formData.description}
           onChange={props.handleChange}
         />
+        <br />
              <label htmlFor="img_url">image</label>
         <input
           type="text"
@@ -30,7 +30,8 @@ export default function CreateGamesForm(props) {
           id="img_url"
           value={props.formData.img_url}
           onChange={props.handleChange}
-          />
+        />
+        <br />
       </form>
     </div>
   )

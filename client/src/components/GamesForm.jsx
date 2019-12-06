@@ -1,55 +1,45 @@
 import React from 'react';
-import { Router, withRouter } from 'react-router-dom';
-import CreateGamesForm from './CreateGamesForm';
-import EditGamesForm from './EditGamesForm';
-import { getAllGames, postGenreGame, putGenreGame,deleteGenreGame } from '../services/api-helper';
+import { Link } from 'react-router-dom';
+import { getGenreGames } from '../services/api-helper'
 
-export class GamesForm extends React.Component {
-  
-  componentDidMount = async () => {
-    const games = await getAllGames();
+export default class GamesForm extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      game: null
+    }
+  }
+
+  async componentDidMount() {
+    const game = await getGenreGames
+      (parseInt(this.props.genre_id))
+      console.log(game)
     this.setState({
-      games
-    });
+      game
+    })
   }
-  handleChange = (event) => {
-    const { name, value } = event.target
-    this.setState(prevState => ({
-      formData: {
-        ...prevState.formData,
-        [name]: value
-      }
-    }));
-  }
-  createSubmit = async (id) => {
-    const newGame = await postGenreGame
-      (this.state.formData);
-    this.setState(prevState => ({
-      games: [
-        ...prevState.games,
-        newGame
-      ]
-    }));
-    this.props.history.push(`game_genre/${id}/games`);
-  }
-
-  removeGame = async (gameId) => {
-    await deleteGenreGame(gameId);
-    this.setState(prevState => ({
-      games: prevState.games.filter(game => game.id !== gameId)
-    }));
-    this.props.history.push(`/`)
-  }
-
 
   render() {
+    const { game } = this.state
     return (
-      <div>
-  
-        
+      <div id="games">
+        {
+          game && (game.map(game => (
+            <div>
+              <h2>{game.name}</h2>
+              <h3>{game.description}</h3>
+              <img className="game_pic" src={game.img_url} alt="game covers" />
+              <Link to={`/create_game`}>
+            <button className="game_button">Edit Game</button>
+          </Link>
+            <button className="game_button" onClick={this.handleDelete}>Delete</button>
+            </div>
+          )))
+        }
+        <Link to={`/create_game`}>
+          <button className="game_button">Add Game</button>
+        </Link>
       </div>
     )
   }
 }
-
-export default withRouter(GamesForm)

@@ -1,16 +1,18 @@
 import React from 'react';
 import './App.css';
 import { Route, withRouter } from 'react-router-dom';
+import axios from 'axios';
 import Home from './components/Home';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import LoginForm from './components/LoginForm';
 import RegisterForm from './components/RegisterForm';
-import { registerUser, loginUser, verifyUser, getOneGameGenre, getAllGameGenres } from './services/api-helper';
+import { registerUser, loginUser, verifyUser, getAllGameGenres } from './services/api-helper';
 import GamesForm from './components/GamesForm';
 import GameGenreForm from './components/GameGenreForm';
 import SelectGenreForm from './components/SelectGenreForm'
-import Axios from 'axios';
+import CreateGamesForm from './components/CreateGamesForm';
+import EditGamesForm from './components/EditGamesForm';
 
 class App extends React.Component {
   constructor(props) {
@@ -19,7 +21,13 @@ class App extends React.Component {
       currentUser: null,
       authErrorMessage: "",
       game_genre: "",
-      game: [],
+      games: [],
+      game: null,
+      formData: {
+        name: "",
+      description: "",
+       img_url: ""
+      },
       game_genres: []
     }
   }
@@ -66,7 +74,7 @@ class App extends React.Component {
       game_genres
     })
   }
-  //////////HandleClick, HandleSubmit//////
+  //////////HandleClick, HandleSubmit, HandleDelete//////
   handleClick = (event) => {
     let radio = event.target.value
     this.setState({
@@ -74,11 +82,23 @@ class App extends React.Component {
     })
   }
   handleSubmit = async (event) => {
-    const game_genre = await getOneGameGenre
-      (this.state.radio)
-    this.setState({
-      game_genre
-    })
+    event.preventDefault();
+    const formData = this.state.formData
+    const response = await axios.post(`postGenreGame`, formData);
+    const game = response.data.game
+    this.setState(prevState => ({
+      games: [...prevState.games, game]
+    }))
+  }
+
+  handleDelete = async (event) => {
+    const id = event.target.id
+    const response = await axios.delete(`deleteGenreGames`)
+    const game = response.data.game
+    this.setState(prevState => ({
+      games: prevState.games.filter(game => game.id !== parseInt(id))
+    }))
+    alert(`${game.name} was DESTROYED!`)
   }
 
   render() {
@@ -112,7 +132,6 @@ class App extends React.Component {
 
         <main>
           <Route path='/select_genre' render={() => <SelectGenreForm
-            radio={this.state.radio}
             handleClick={this.handleClick}
             handleSubmit={this.handleSubmit}
             game_genres={this.state.game_genres}
@@ -124,9 +143,22 @@ class App extends React.Component {
               genre_id={props.match.params.genre_id}
             />
           )} />
-          <Route path="/genres/:genre_id/games" render={() => (
-            <GamesForm />
+          <Route exact path="/genres/:genre_id/games" render={(props) => (
+            <GamesForm
+              genre_id={props.match.params.genre_id}/>
           )} />
+          <Route path="/create_game"
+            render={(props) => (
+              <CreateGamesForm
+              handleSubmit={this.handleSubmit}
+              />
+            )} />
+          <Route path="/edit_game"
+            render={(props) => (
+              <EditGamesForm
+              handleSubmit={this.handleSubmit}
+              />
+            )} />
         </main>
 
         <Footer />

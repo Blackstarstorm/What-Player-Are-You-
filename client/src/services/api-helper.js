@@ -45,17 +45,7 @@ export const getOneGameGenre = async (id) => {
   const resp = await api.get(`/game_genres/${id}`);
   return resp.data;
 }
-//======== Game Facts=================//
-export const getGameGenreFacts = async (id) => {
-  const resp = await api.get(`/game_genres/${id}/genre_facts`);
-  return resp.data;
-}
-//========Game Title Image =============//
 
-export const getGameGenreImage = async (id) => {
-  const resp = await api.get(`/game_genres/${id}/genre_images`);
-  return resp.data;
-}
 //========CRUD GAMES=====//
 
 export const getAllGames = async () => {
