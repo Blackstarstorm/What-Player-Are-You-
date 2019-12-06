@@ -1,37 +1,50 @@
 import React from 'react'
 
-export default function EditGamesForm(props) {
-  return (
-    <div>
-       <form onSubmit={(event) => {
-        event.preventDefault();
-        props.createSubmit();
-      }}>
-         <label htmlFor="name">name</label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          value={props.formData.name}
-          onChange={props.handleChange}
-        />
-             <label htmlFor="description">description</label>
-        <input
-          type="text"
-          name="description"
-          id="description"
-          value={props.formData.description}
-          onChange={props.handleChange}
-        />
-             <label htmlFor="img_url">image</label>
-        <input
-          type="text"
-          name="img_url"
-          id="img_url"
-          value={props.formData.img_url}
-          onChange={props.handleChange}
-          />
-      </form>
-    </div>
-  )
-}
+export default class EditGamesForm extends React.Component {
+  constructor() {
+    super();
+    //   this.state = {
+    //     games: [],
+    //     formData: {
+    //       name: '',
+    //       description: '',
+    //       img_url: ''
+    //     }
+    //   }
+    }
+    render(){
+      return (
+        <div>
+          <form onSubmit={(event) => {
+            event.preventDefault();
+            this.createSubmit();
+          }}>
+            <label htmlFor="name">name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              value={this.formData.name}
+              onChange={this.handleChange}
+            />
+            <label htmlFor="description">description</label>
+            <input
+              type="text"
+              name="description"
+              id="description"
+              value={this.formData.description}
+              onChange={this.handleChange}
+            />
+            <label htmlFor="img_url">image</label>
+            <input
+              type="text"
+              name="img_url"
+              id="img_url"
+              value={this.formData.img_url}
+              onChange={this.handleChange}
+            />
+          </form>
+        </div>
+      )
+    }
+  }

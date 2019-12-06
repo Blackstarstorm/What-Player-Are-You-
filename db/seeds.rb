@@ -81,7 +81,7 @@ GenreFact.create([
   game_genre: genres[2]
 },
 {
-  fact:"Platform games are well know for having speed-runs(records of how fast you can finish the game) of games even holding competitions.",
+  fact:"Platform games are well known for having speed-runs(records to see how fast you can finish the game) of games even holding competitions.",
   game_genre: genres[2]
 },
 {
@@ -129,7 +129,7 @@ GenreImage.create([
     img_url: "https://res.cloudinary.com/dvysqqdqe/image/upload/v1575312614/2000_cvtgpz.png",
     game_genre: genres[1]
   },{
-    img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575485015/hd-super-smash-bros-ultimate-logo-png-free-unlimited-download-super-smash-bros-ultimate-logo-png-1201_603_ypauj8.png",
+    img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575590695/super-smash-bros-logo-new-11530959212tbtuendqoe_yqgzzm.png",
     game_genre: genres[1]
   },{
     img_url:"https://res.cloudinary.com/dvysqqdqe/image/upload/v1575312770/bb0b74c367af090e22fd60dbb85f999e_puasbo.png",

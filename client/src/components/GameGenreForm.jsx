@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { getOneGameGenre } from '../services/api-helper';
 
 export default class GameGenreForm extends React.Component {
@@ -25,7 +26,7 @@ export default class GameGenreForm extends React.Component {
       <div className='genre_type'>
         {genre &&
           <>
-            <h2>"{genre.genre}"Genre</h2>
+            <h2>"{genre.genre}" Genre</h2>
             <h3>Description:{genre.description}
             </h3>
             <h2>Facts:</h2>
@@ -33,12 +34,18 @@ export default class GameGenreForm extends React.Component {
               genre.genre_facts.map(fact => (
                 <p>{fact.fact}</p>
               ))
-            }
+          }
+          <h2>Some Game Examples:</h2>
             {
-              genre.genre_images.map(image => (
-                <img className="game_title" src={image.img_url} />
+            genre.genre_images.map(image => (
+              <img className="game_title"
+                src={image.img_url} />
               ))
-            }
+          }
+
+          <Link to="/genres/:genre_id/games">
+            <button>Games for this genre</button>
+          </Link>
           </>
         }
       </div>

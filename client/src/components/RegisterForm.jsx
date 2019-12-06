@@ -1,48 +1,58 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+import { registerUser } from '../services/api-helper';
 
-export default class RegisterForm extends React.Component {
+class RegisterForm extends React.Component {
   state = {
-    username: "",
-    password: ""
+    formData: {
+      username: "",
+      password: ""
+    }
   }
   handleChange = (event) => {
     const { name, value } = event.target;
-    this.setState({ [name]: value });
+    this.setState(prevState => ({
+      formData: {
+        ...prevState.formData,
+        [name]: value
+      }
+    }))
   }
+
+  handleSubmit = async (event) => {
+    event.preventDefault();
+    await registerUser(this.state.formData)
+    // this.props.history.push("/")
+  }
+
   render() {
+
     return (
-      <form  onSubmit={(event) => {
-        event.preventDefault();
-        this.props.handleRegister(this.state);
-        this.setState({
-          username: "",
-          password: ""
-        });
-      }}>
+      <form onSubmit={this.handleSubmit}>
         <div className="sign-in">
-        <h2>Register</h2>
-        <label htmlFor="username">User Name:</label>
-        <input
-          name="username"
-          id="username"
-          type="text"
-          value={this.state.username}
-          onChange={this.handleChange}
-        />
-        <label htmlFor="password">Password:</label>
-        <input
-          name="password"
-          id="password"
-          type="password"
-          value={this.state.password}
-          onChange={this.handleChange}
-        />
-        <button className='submit'>Submit</button>
-        <br />
-          <p>{this.props.authErrorMessage}</p>
+          <h2>Register</h2>
+          <label htmlFor="username">User Name:</label>
+          <input
+            name="username"
+            id="username"
+            type="text"
+            value={this.state.username}
+            onChange={this.handleChange}
+          />
+          <label htmlFor="password">Password:</label>
+          <input
+            name="password"
+            id="password"
+            type="password"
+            value={this.state.password}
+            onChange={this.handleChange}
+          />
+          <button className='submit'>Submit</button>
+
+
         </div>
       </form>
     )
   }
 }
-
+export default withRouter(RegisterForm);

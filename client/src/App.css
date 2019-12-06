@@ -56,17 +56,22 @@ div#intro{
   margin: 0 auto;
   width: 50%;
   border: 2px solid black;
-  padding: 2em;
-  /* background: ; */
+  padding: 1em;
+  /* background: grey; */
 }
 
 #genre_title{
-  margin-top: 10em;
+  margin-top: 5em;
 }
 /* Genre Selected */
+.genre_type{
+  max-height: 75vh;
+  overflow: scroll;
+  margin-top: 6em;
+}
 .game_title{
-  width: 100px;
-  height: 100px;
+  margin: 0 auto;
+  width: 300px;
 }
 /* Footer */
 footer{

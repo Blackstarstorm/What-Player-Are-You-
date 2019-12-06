@@ -2,17 +2,10 @@ import React from 'react';
 import { Router, withRouter } from 'react-router-dom';
 import CreateGamesForm from './CreateGamesForm';
 import EditGamesForm from './EditGamesForm';
-import { deleteGenreGame } from '../services/api-helper';
+import { getAllGames, postGenreGame, putGenreGame,deleteGenreGame } from '../services/api-helper';
 
 export class GamesForm extends React.Component {
-  state = {
-    games: [],
-    formData: {
-      name: '',
-      description: '',
-      img_url: ''
-    }
-  }
+  
   componentDidMount = async () => {
     const games = await getAllGames();
     this.setState({
@@ -28,7 +21,7 @@ export class GamesForm extends React.Component {
       }
     }));
   }
-  createSubmit = async () => {
+  createSubmit = async (id) => {
     const newGame = await postGenreGame
       (this.state.formData);
     this.setState(prevState => ({
@@ -52,7 +45,7 @@ export class GamesForm extends React.Component {
   render() {
     return (
       <div>
-        <EditGamesForm />
+  
         
       </div>
     )

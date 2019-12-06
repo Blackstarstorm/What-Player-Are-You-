@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import LoginForm from './components/LoginForm';
 import RegisterForm from './components/RegisterForm';
 import { registerUser, loginUser, verifyUser, getOneGameGenre, getAllGameGenres } from './services/api-helper';
+import GamesForm from './components/GamesForm';
 import GameGenreForm from './components/GameGenreForm';
 import SelectGenreForm from './components/SelectGenreForm'
 import Axios from 'axios';
@@ -122,6 +123,9 @@ class App extends React.Component {
             <GameGenreForm
               genre_id={props.match.params.genre_id}
             />
+          )} />
+          <Route path="/genres/:genre_id/games" render={() => (
+            <GamesForm />
           )} />
         </main>
 
