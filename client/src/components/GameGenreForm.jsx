@@ -15,6 +15,7 @@ export default class GameGenreForm extends React.Component {
     this.setState({
       genre
     })
+    this.props.updateGameGenre(this.props.genre_id)
   }
 
   render() {

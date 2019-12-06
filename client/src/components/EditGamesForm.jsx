@@ -3,7 +3,7 @@ import React from 'react'
 export default function EditGamesForm(props) {
       return (
         <div>
-          <form onSubmit={(event) => {
+          <form className="game_data" onSubmit={(event) => {
             event.preventDefault();
             props.createSubmit();
           }}>
@@ -31,7 +31,9 @@ export default function EditGamesForm(props) {
               value={props.formData.img_url}
               onChange={props.handleChange}
             />
+             <button>Edit</button>
           </form>
+         
         </div>
       )
     }

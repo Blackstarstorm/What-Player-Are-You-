@@ -1,6 +1,11 @@
 import axios from 'axios';
+
+// const baseURL = "https://player-are-u-api.herokuapp.com/"
+
+const baseURL = "http://localhost:3000";
+
 const api = axios.create({
-  baseURL: "http://localhost:3000"
+  baseURL: baseURL
 })
 
 // ============== Auth ================
@@ -46,7 +51,7 @@ export const getOneGameGenre = async (id) => {
   return resp.data;
 }
 
-//========CRUD GAMES=====//
+//========Genre GAMES=====//
 
 export const getAllGames = async () => {
   const resp = await api.get('/games');
@@ -70,5 +75,28 @@ export const putGenreGame = async (id, gameData) => {
 
 export const deleteGenreGame = async (id) => {
   const resp = await api.delete(`/game_genres/${id}/games`);
+  return resp.data;
+}
+
+//==========Games============//
+
+export const getGames = async (id) => {
+  const resp = await api.get(`/game_genres/${id}/games`);
+  return resp.data;
+}
+
+export const postGame = async (gameData) => {
+  console.log(gameData)
+  const resp = await api.post(`/games`, gameData);
+  return resp.data;
+}
+
+export const putGame = async (id, gameData) => {
+  const resp = await api.put(`/games/${id}`, gameData);
+  return resp.data;
+}
+
+export const deleteGame = async (id) => {
+  const resp = await api.delete(`/games/${id}`);
   return resp.data;
 }

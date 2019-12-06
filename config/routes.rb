@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
   # get '/endpoint', to: 'controller#method'
 get '/game_genres/:game_genre_id/games', to: 'games#index_by_game_genre'
-# post '/game_genres/:game_genre_id/new_games', to: 'games#add_game'
+post '/game_genres/:game_genre_id/new_games', to: 'games#add_game'
 
 get '/game_genres/:game_genre_id/genre_facts', to: 'facts#index_by_genre_facts'
 

@@ -7,7 +7,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import LoginForm from './components/LoginForm';
 import RegisterForm from './components/RegisterForm';
-import { registerUser, loginUser, verifyUser, getAllGameGenres } from './services/api-helper';
+import { registerUser, loginUser, verifyUser, getAllGameGenres, postGenreGame, postGame } from './services/api-helper';
 import GamesForm from './components/GamesForm';
 import GameGenreForm from './components/GameGenreForm';
 import SelectGenreForm from './components/SelectGenreForm'
@@ -24,9 +24,10 @@ class App extends React.Component {
       games: [],
       game: null,
       formData: {
-        name: "",
+      name: "",
       description: "",
-       img_url: ""
+      img_url: "",
+      game_genre_id:""
       },
       game_genres: []
     }
@@ -74,22 +75,65 @@ class App extends React.Component {
       game_genres
     })
   }
-  //////////HandleClick, HandleSubmit, HandleDelete//////
+  updateGameGenre = (game_genre) => {
+    this.setState(prevState => ({
+      formData: {
+        ...prevState.formData,
+        game_genre_id: game_genre
+      }, 
+      game_genre
+    }))
+  }
+  //////////HandleClick, HandleChange,HandleSubmit, HandleDelete//////
   handleClick = (event) => {
     let radio = event.target.value
     this.setState({
       radio: radio
     })
   }
+  handleChange = async (event) => {
+    const {name, value} = event.target
+    this.setState(prevState => ({
+      formData: {
+        ...prevState.formData,
+        [name]: value
+      } 
+    }))
+  } 
+
   handleSubmit = async (event) => {
     event.preventDefault();
     const formData = this.state.formData
-    const response = await axios.post(`postGenreGame`, formData);
-    const game = response.data.game
+    const game = await postGenreGame(formData)
+      ;
+    // const game = response.data.game
     this.setState(prevState => ({
-      games: [...prevState.games, game]
+      games: [...prevState.games,
+        game]
     }))
+    console.log(formData)
   }
+  handleAddGameSubmit = async (event) => {
+    event.preventDefault();
+    const formData = this.state.formData;
+    this.setState(prevState => ({
+      formData: {
+        name: "",
+        description: "",
+        img_url: "",
+        game_genre_id:""
+        }
+    }))
+    const game = await postGame(formData)
+      ;
+    // const game = response.data.game
+    this.setState(prevState => ({
+      games: [...prevState.games,
+        game]
+    }))
+    console.log(formData)
+  }
+
 
   handleDelete = async (event) => {
     const id = event.target.id
@@ -141,6 +185,7 @@ class App extends React.Component {
           <Route exact path="/genres/:genre_id" render={(props) => (
             <GameGenreForm
               genre_id={props.match.params.genre_id}
+              updateGameGenre={this.updateGameGenre}
             />
           )} />
           <Route exact path="/genres/:genre_id/games" render={(props) => (
@@ -150,12 +195,16 @@ class App extends React.Component {
           <Route path="/create_game"
             render={(props) => (
               <CreateGamesForm
-              handleSubmit={this.handleSubmit}
+                formData={this.state.formData}
+                handleChange={this.handleChange}
+              handleAddGameSubmit={this.handleAddGameSubmit}
               />
             )} />
           <Route path="/edit_game"
             render={(props) => (
               <EditGamesForm
+                formData={this.state.formData}
+                handleChange={this.handleChange}
               handleSubmit={this.handleSubmit}
               />
             )} />
