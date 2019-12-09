@@ -1,25 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FFsound from '../FFsound.mp3';
 
-export default function SelectGenreForm(props) {
-  return (
-    <section>
-      <div id="genre_title">
-        <h1>Pick a Genre</h1>
-      </div>
+export default class SelectGenreForm extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-      <div id="select_genre">
-        {
-          props.game_genres.map(genre => (
-            <div key={genre.id}>
-              <Link to={`/genres/${genre.id}`}>
-                <p>{genre.genre}</p>
-              </Link>
-            </div>
-          ))
-        }
-      </div>
+  render() {
+    let audioF = new Audio(FFsound);
+    return (
+      <section>
+        <div id="genre_title">
+          <h1>Pick a Genre</h1>
+        </div>
 
-    </section>
-  )
+        <div id="select_genre">
+          {
+            this.props.game_genres.map(genre => (
+              <div key={genre.id}>
+                <Link onClick={async () =>
+           await audioF.play()} to={`/genres/${genre.id}`}>
+                  <p>{genre.genre}</p>
+                </Link>
+              </div>
+            ))
+          }
+        </div>
+
+      </section>
+    )
+  }
 }

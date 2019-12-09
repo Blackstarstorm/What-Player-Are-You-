@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 import LoginForm from './components/LoginForm';
 import RegisterForm from './components/RegisterForm';
 import { registerUser, loginUser, verifyUser, getAllGameGenres, postGenreGame, postGame, putGame } from './services/api-helper';
-import GamesForm from './components/GamesForm';
+import GamesList from './components/GamesList';
 import GameGenreForm from './components/GameGenreForm';
 import SelectGenreForm from './components/SelectGenreForm'
 import CreateGamesForm from './components/CreateGamesForm';
@@ -200,7 +200,7 @@ class App extends React.Component {
             />
           )} />
           <Route exact path="/genres/:genre_id/games" render={(props) => (
-            <GamesForm
+            <GamesList
               handleDelete={this.handleDelete}
               genre_id={props.match.params.genre_id} />
           )} />

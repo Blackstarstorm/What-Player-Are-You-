@@ -3,9 +3,9 @@ import React from 'react'
 export default function CreateGamesForm(props) {
   const { formData } = props;
   return (
-    <div>
+    <div id="info-data">
       <form className="game_data" onSubmit={props.handleAddGameSubmit}>
-         <label htmlFor="name">name</label>
+         <label htmlFor="name">Name</label>
         <input
           type="text"
           name="name"
@@ -14,7 +14,7 @@ export default function CreateGamesForm(props) {
           onChange={props.handleChange}
         />
         <br />
-        <label htmlFor="description">description</label>
+        <label htmlFor="description">Description</label>
         <input
           type="text"
           name="description"
@@ -23,7 +23,7 @@ export default function CreateGamesForm(props) {
           onChange={props.handleChange}
         />
         <br />
-        <label htmlFor="img_url">image</label>
+        <label htmlFor="img_url">Image</label>
         <input
           type="text"
           name="img_url"
@@ -32,8 +32,8 @@ export default function CreateGamesForm(props) {
           onChange={props.handleChange}
         />
         <br />
-        <button>Add Game</button>
       </form>
+      <button className="add_game">Add Game</button>
     </div>
   )
 }

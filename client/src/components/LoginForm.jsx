@@ -22,7 +22,7 @@ export default class LoginForm extends React.Component {
       }}>
         <div className="sign-in">
         <h2>Login</h2>
-        <label htmlFor="username">User Name:</label>
+        <label htmlFor="username">Username:</label>
         <input
           name="username"
           id="username"
@@ -38,8 +38,8 @@ export default class LoginForm extends React.Component {
           value={this.state.password}
           onChange={this.handleChange}
         />
-        <button className>Submit</button>
-        <Link to="/register"><button> 
+        <button className="sign-up">Submit</button>
+        <Link to="/register"><button className="sign-up"> 
           Register</button>
         </Link>
         <br />

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { getGenreGames, deleteGame } from '../services/api-helper'
 
-export default class GamesForm extends React.Component {
+export default class GamesList extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -14,7 +14,6 @@ export default class GamesForm extends React.Component {
   async componentDidMount() {
     const games = await getGenreGames
       (parseInt(this.props.genre_id))
-    console.log(games)
     this.setState({
       games
     })
@@ -23,7 +22,6 @@ export default class GamesForm extends React.Component {
   handleDelete = async (event) => {
     const id = event.target.id
     const game = await deleteGame(id)
-    console.log(game)
     this.setState(prevState => ({
       games: prevState.games.filter(game => game.id !== parseInt(id))
     }))
@@ -32,7 +30,6 @@ export default class GamesForm extends React.Component {
 
   render() {
     const { games } = this.state
-    console.log(games)
     return (
       <div id="games">
         {
@@ -48,8 +45,11 @@ export default class GamesForm extends React.Component {
             </div>
           ))
         }
+        <Link to={`/select_genre`}>
+            <button className="back_button">Back</button>
+          </Link>
         <Link to={`/create_game`}>
-          <button className="game_button">Add Game</button>
+          <button className="add_button">Add Game</button>
         </Link>
       </div>
     )
