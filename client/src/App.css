@@ -1,27 +1,33 @@
 .App{ 
   text-align: center;
+  background:url("https://res.cloudinary.com/dvysqqdqe/image/upload/v1575833263/leisure-activities-colorful-linear-icons-set-modern-pastime-digital-entertainment-thin-line-contour-symbols-various-gamer-devices-159822144_ks33e8.jpg");
 }
 /* Header */
 header{
   position:fixed;
   text-align: center;
   top: 0;
-  height: 5em;
-  background: green;
+  height: 8em;
+  background: linear-gradient(to right,#00AC9F, #2E6DB4);
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
 
 }
 a#title{
+  color: #F3C300;
   text-decoration: none;
 }
 
 #log_reg_button{
   border-radius: 4em;
+  border: 1px solid black;
   padding: 2em;
-  margin: 0 auto;
+  margin-top: 1em;
+  background: linear-gradient(to right,#F3C300, #00AC9F);
+  color:#DF0024;
+  font-weight: bold;
 }
 /* Login */
 .sign-in{
@@ -47,7 +53,14 @@ div#intro{
   border-radius: 7em;
   padding: 2em;
 }
+div#background{
+  background: url("https://res.cloudinary.com/dvysqqdqe/image/upload/v1575850060/53143281-line-icons-set-of-video-game-genres-retro-computer-gaming-modern-color-flat-design-linear-pictogram-_kwixa3.jpg");
+}
 /* Genre Select */
+main{
+  height: 100em;
+  background: #00AC9F;
+}
 #select_genre{
   display: grid;
   grid-template-rows: 1fr 1fr;
@@ -55,19 +68,40 @@ div#intro{
   grid-gap: 2em;
   margin: 0 auto;
   width: 50%;
+  max-height: 55vh;
   border: 2px solid black;
   padding: 1em;
-  /* background: grey; */
+  background: grey;
 }
-
+#select_genre a{
+  color: whitesmoke;
+  text-decoration: none;
+}
+#select_genre a:hover{
+  color: blue;
+  
+}
 #genre_title{
   margin-top: 5em;
 }
+.game_genre_button{
+
+  border-radius: 24px;
+  margin: 1em;
+  padding: 1.5em;
+}
 /* Genre Selected */
 .genre_type{
-  max-height: 75vh;
+  max-height: 65vh;
   overflow: scroll;
   margin-top: 6em;
+  border: 2px solid black;
+  background: grey;
+}
+#titles_area{
+  display: grid;
+  grid-template-rows: 1fr;
+  /* grid-template-columns: 1fr 1fr; */
 }
 .game_title{
   margin: 0 auto;
@@ -78,7 +112,7 @@ div#intro{
 width: 30%;
 }
 #games{
-  max-height: 80vh;
+  max-height: 70vh;
   overflow: scroll;
   margin-top: 5em;
 }
@@ -94,8 +128,25 @@ width: 30%;
 footer{
   text-align: center;
   font-weight: bold;
-  background: hotpink;
+  background: linear-gradient(to right,#F3C300, #DF0024);
   position:fixed;
   width: 100%;
- bottom:0;
+  height: 7em;
+  bottom:0;
+}
+footer h2{
+color: #00AC9F;
+}
+footer div{
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+footer img{
+  width: 3em;
+  height: 3em;
+  padding: 0.5em;
+}
+footer a{
+  margin-bottom: 80em;
 }

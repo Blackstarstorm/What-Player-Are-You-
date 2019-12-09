@@ -30,19 +30,24 @@ export default class GameGenreForm extends React.Component {
             <h2>Facts:</h2>
             {
               genre.genre_facts.map(fact => (
-                <p>{fact.fact}</p>
+                <h3>{fact.fact}</h3>
               ))
           }
-          <h2>Some Game Examples:</h2>
+          <h2>Some Game Titles:</h2>
             {
             genre.genre_images.map(image => (
+              <div id="titles_area">
               <img className="game_title"
-                src={image.img_url} alt="video game titles"/>
+                  src={image.img_url} alt="video game titles" />
+                </div>
               ))
           }
+           <Link to={`/select_genre`}>
+            <button className="game_genre_button">Back</button>
+          </Link>
 
           <Link to={`/genres/${genre.id}/games`}>
-            <button>Games for this genre</button>
+            <button className="game_genre_button">Games for this genre</button>
           </Link>
           </>
         }

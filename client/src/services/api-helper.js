@@ -92,6 +92,7 @@ export const postGame = async (gameData) => {
 }
 
 export const putGame = async (id, gameData) => {
+  console.log("test", gameData)
   const resp = await api.put(`/games/${id}`, gameData);
   return resp.data;
 }

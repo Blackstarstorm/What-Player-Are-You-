@@ -13,6 +13,6 @@ export default function Home() {
       <Link to="/select_genre">
         <button id="start">Find A Genre</button>
       </Link>
-    </div>
+      </div>  
   )
-}
+    }

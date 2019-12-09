@@ -6,7 +6,7 @@ export default function Header(props) {
   if (props.currentUser) username = props.currentUser.username[0].toUpperCase() + props.currentUser.username.slice(1);
   return (
     <header>
-    <div >
+    <div>
         <Link id="title"to="/"><h1>What Player Are You?</h1></Link>
         
       {

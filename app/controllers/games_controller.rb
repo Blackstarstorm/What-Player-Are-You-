@@ -11,8 +11,8 @@ class GamesController < ApplicationController
   def index_by_game_genre
     # endpoint = '/game_genre/:game_genre_id/games'
     @game_genre = GameGenre.find(params[:game_genre_id])
-    @game = @game_genre.games
-    render json: @game, include: :game_genre, status: :ok
+    @games = @game_genre.games
+    render json: @games, include: :game_genre, status: :ok
   end
 
 
@@ -48,6 +48,7 @@ class GamesController < ApplicationController
   # DELETE /games/1
   def destroy
     @game.destroy
+    render json: @game
   end
 
   private
@@ -58,6 +59,6 @@ class GamesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def game_params
-      params.require(:game).permit(:name, :description, :img_url, :game_genre_id)
+      params.require(:game).permit(:name, :description, :img_url, :game_genre_id, :id)
     end
 end

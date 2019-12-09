@@ -7,7 +7,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import LoginForm from './components/LoginForm';
 import RegisterForm from './components/RegisterForm';
-import { registerUser, loginUser, verifyUser, getAllGameGenres, postGenreGame, postGame } from './services/api-helper';
+import { registerUser, loginUser, verifyUser, getAllGameGenres, postGenreGame, postGame, putGame } from './services/api-helper';
 import GamesForm from './components/GamesForm';
 import GameGenreForm from './components/GameGenreForm';
 import SelectGenreForm from './components/SelectGenreForm'
@@ -24,10 +24,10 @@ class App extends React.Component {
       games: [],
       game: null,
       formData: {
-      name: "",
-      description: "",
-      img_url: "",
-      game_genre_id:""
+        name: "",
+        description: "",
+        img_url: "",
+        game_genre_id: ""
       },
       game_genres: []
     }
@@ -80,11 +80,11 @@ class App extends React.Component {
       formData: {
         ...prevState.formData,
         game_genre_id: game_genre
-      }, 
+      },
       game_genre
     }))
   }
-  //////////HandleClick, HandleChange,HandleSubmit, HandleDelete//////
+  //////////HandleClick, HandleChange,HandleSubmit,HandleAddGameSubmit, HandleAddGameSubmit,HandleEditGameSubmit,HandleDelete//////
   handleClick = (event) => {
     let radio = event.target.value
     this.setState({
@@ -92,27 +92,26 @@ class App extends React.Component {
     })
   }
   handleChange = async (event) => {
-    const {name, value} = event.target
+    const { name, value } = event.target
     this.setState(prevState => ({
       formData: {
         ...prevState.formData,
         [name]: value
-      } 
+      }
     }))
-  } 
+  }
 
   handleSubmit = async (event) => {
     event.preventDefault();
     const formData = this.state.formData
     const game = await postGenreGame(formData)
       ;
-    // const game = response.data.game
     this.setState(prevState => ({
       games: [...prevState.games,
         game]
     }))
-    console.log(formData)
   }
+
   handleAddGameSubmit = async (event) => {
     event.preventDefault();
     const formData = this.state.formData;
@@ -121,29 +120,39 @@ class App extends React.Component {
         name: "",
         description: "",
         img_url: "",
-        game_genre_id:""
-        }
+        game_genre_id: ""
+      }
     }))
     const game = await postGame(formData)
       ;
-    // const game = response.data.game
     this.setState(prevState => ({
       games: [...prevState.games,
         game]
     }))
+  }
+
+  handleEditGameSubmit = async (id, game_genre_id) => {
+    let formData = this.state.formData;
+    formData.game_genre_id = game_genre_id
     console.log(formData)
-  }
 
+    const game = await putGame(id, formData);
 
-  handleDelete = async (event) => {
-    const id = event.target.id
-    const response = await axios.delete(`deleteGenreGames`)
-    const game = response.data.game
     this.setState(prevState => ({
-      games: prevState.games.filter(game => game.id !== parseInt(id))
+      formData: {
+        name: "",
+        description: "",
+        img_url: "",
+        game_genre_id: ""
+      }
     }))
-    alert(`${game.name} was DESTROYED!`)
+    this.setState(prevState => ({
+      games: [...prevState.games,
+        game]
+    }))
   }
+
+
 
   render() {
     const { currentUser } = this.state;
@@ -154,10 +163,6 @@ class App extends React.Component {
             currentUser={currentUser}
             handleLogout={this.handleLogout}
           />
-          <Route exact path="/" render={() => (
-            <Home
-              currentUser={currentUser}
-            />)} />
 
           <Route path="/login" render={() => (
             <LoginForm
@@ -175,6 +180,12 @@ class App extends React.Component {
         </header>
 
         <main>
+
+          <Route exact path="/" render={() => (
+            <Home
+              currentUser={currentUser}
+            />)} />
+
           <Route path='/select_genre' render={() => <SelectGenreForm
             handleClick={this.handleClick}
             handleSubmit={this.handleSubmit}
@@ -190,24 +201,29 @@ class App extends React.Component {
           )} />
           <Route exact path="/genres/:genre_id/games" render={(props) => (
             <GamesForm
-              genre_id={props.match.params.genre_id}/>
+              handleDelete={this.handleDelete}
+              genre_id={props.match.params.genre_id} />
           )} />
           <Route path="/create_game"
             render={(props) => (
               <CreateGamesForm
                 formData={this.state.formData}
                 handleChange={this.handleChange}
-              handleAddGameSubmit={this.handleAddGameSubmit}
+                handleAddGameSubmit={this.handleAddGameSubmit}
               />
             )} />
-          <Route path="/edit_game"
-            render={(props) => (
-              <EditGamesForm
+          <Route path="/genres/:genre_id/games/:id/edit"
+            render={(props) => {
+              const { genre_id } = props.match.params
+              const { id } = props.match.params
+              return <EditGamesForm
                 formData={this.state.formData}
                 handleChange={this.handleChange}
-              handleSubmit={this.handleSubmit}
+                handleEditGameSubmit={this.handleEditGameSubmit}
+                id={id}
+                genre_id={genre_id}
               />
-            )} />
+            }} />
         </main>
 
         <Footer />
