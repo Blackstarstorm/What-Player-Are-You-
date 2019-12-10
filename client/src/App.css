@@ -2,6 +2,11 @@
   text-align: center;
   background:url("https://res.cloudinary.com/dvysqqdqe/image/upload/v1575833263/leisure-activities-colorful-linear-icons-set-modern-pastime-digital-entertainment-thin-line-contour-symbols-various-gamer-devices-159822144_ks33e8.jpg");
 }
+
+input {
+  padding-left: 5px;
+  box-sizing: border-box;
+}
 /* Header */
 header{
   position:fixed;
@@ -17,8 +22,9 @@ header{
 header h1{
   color:black
 }
-a#title{
+a.title{
   text-decoration: none;
+  /* background-image: -webkit-linear-gradient(left, #E0F8F7, #585858, #fff); */
 }
 
 button#log_reg_button{
@@ -31,6 +37,10 @@ button#log_reg_button{
   font-weight: bold;
   cursor: pointer;
 }
+button#log_reg_button:hover{
+    color: #ffffff;
+    background: linear-gradient(to right, #ffffff,#003791, #000000);
+}
 /* Login */
 .sign-in{
 display: flex;
@@ -41,17 +51,17 @@ padding: 5em;
 background:linear-gradient(to left,  #107C10,#3A3A3A,  #ffffff);
 }
 
-input#username,#password {
+input.username,.password {
   border-radius: 10em;
 }
 
-input#username:hover {
+input.username:hover {
   color: grey;
   opacity: 0.8;
   }
   
 
-input#password:hover {
+input.password:hover {
 color: grey;
 opacity: 0.8;
 }
@@ -63,6 +73,28 @@ button.sign-up{
   background: linear-gradient(to right, #107C10,#3A3A3A,  #ffffff);
   cursor: pointer;
   font-weight: bold;
+}
+button.sign-up:hover{
+  color: white;
+  background: linear-gradient(to left, #107C10,#3A3A3A)
+}
+div#welcome{
+  display: flex;
+  justify-content: center;
+
+}
+button.logout{
+border: 2px solid black;
+border-radius: 16em;
+margin-bottom: 2em;
+font-weight: bold;
+background: linear-gradient(to right, #DF0024,#F3C300, #00AC9F,#2E6DB4);
+cursor: pointer;
+}
+
+button.logout:hover{
+    color: #ffffff;
+    background: linear-gradient(to right, #ffffff,#003791, #000000);
 }
 /* Home */
 
@@ -88,6 +120,11 @@ button#start{
   font-weight: bold;
   cursor: pointer;
 }
+button#start:hover{  
+  color: #ffffff;
+  background: linear-gradient(to right, #ffffff,#003791, #000000);
+}
+
 div#background{
   background: url("https://res.cloudinary.com/dvysqqdqe/image/upload/v1575850060/53143281-line-icons-set-of-video-game-genres-retro-computer-gaming-modern-color-flat-design-linear-pictogram-_kwixa3.jpg");
 }
@@ -118,7 +155,7 @@ div#background{
 .genre_type{
   height: 90%;
   width: 100%;
-  overflow: scroll;
+  overflow: auto;
   margin-top: 8em;
   border: 2px solid black;
   background: grey;
@@ -146,6 +183,10 @@ button.game_genre_button{
   font-weight: bold;
   cursor: pointer;
 }
+button.game_genre_button:hover{
+  color: #C6C8CD;
+  background: linear-gradient(to right, #ffffff,#2998C0);
+}
 /* Game Genre Games */
 .game_pic{
 height: 40%;  
@@ -153,9 +194,8 @@ width: 40%;
 }
 #games{
   background: grey;
-  max-height: 70%;
   overflow: scroll;
-  margin-top: 7em;
+  margin-top: 8em;
 }
 button.game_button{
   background: linear-gradient(to right, #ffffff,#003791, #000000);
@@ -165,12 +205,21 @@ button.game_button{
   padding: 2em;
   margin: 2em;
 }
+button.game_button:hover{
+  color:black;
+  background: linear-gradient(to right, #DF0024,#F3C300, #00AC9F,#2E6DB4);
+}
 button.add_button, button.back_button, button.add_game, button.edit_game{
   border-radius: 20em;
   padding: 2em;
   margin: 1em;
   margin-bottom: 1em;
   background: linear-gradient(to right, #645097,#D5D6CE,#1A1C10);
+  font-weight: bold;
+}
+button.add_button:hover, button.back_button:hover, button.add_game:hover, button.edit_game:hover{
+  color:#959499;
+  background: linear-gradient(to right, #CECCD0,#C5C0E3,#906DC2);
 }
 /* Game info */
 div#games{
@@ -199,6 +248,7 @@ div#games{
     margin: 0 auto;
     width: 80%;
     border-radius: 20em;
+    padding-left:10px;
   }
   input#description{
     margin: 0 auto;

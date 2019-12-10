@@ -37,7 +37,7 @@ class RegisterForm extends React.Component {
           <label htmlFor="username">Username:</label>
           <input
             name="username"
-            id="username"
+            className="username"
             type="text"
             value={this.state.username}
             onChange={this.handleChange}
@@ -45,13 +45,12 @@ class RegisterForm extends React.Component {
           <label htmlFor="password">Password:</label>
           <input
             name="password"
-            id="password"
+            className="password"
             type="password"
             value={this.state.password}
             onChange={this.handleChange}
           />
-          <button className='sign-up'>Submit</button>
-
+            <button className='sign-up'>Submit</button>
 
         </div>
       </form>

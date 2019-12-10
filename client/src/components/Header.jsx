@@ -7,13 +7,13 @@ export default function Header(props) {
   return (
     <header>
     <div>
-        <Link id="title"to="/"><h1>What Player Are You?</h1></Link>
+        <Link className="title"to="/"><h1>What Player Are You?</h1></Link>
         
       {
           props.currentUser ?
-            <div>
+            <div id="welcome">
               <h2>Welcome, {username}!</h2>
-              <button className="log" onClick={props.handleLogout}>LogOut</button>
+              <button className="logout" onClick={props.handleLogout}>LogOut</button>
             </div>
             :
           <></>
