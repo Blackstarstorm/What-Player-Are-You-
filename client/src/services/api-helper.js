@@ -85,8 +85,9 @@ export const getGames = async (id) => {
   return resp.data;
 }
 
-export const postGame = async (gameData) => {
+export const postGame = async (id, gameData) => {
   console.log(gameData)
+  gameData.genre_id = id
   const resp = await api.post(`/games`, gameData);
   return resp.data;
 }

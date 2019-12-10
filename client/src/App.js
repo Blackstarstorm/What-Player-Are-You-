@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Route, withRouter } from 'react-router-dom';
+import axios from 'axios';
 import Home from './components/Home';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -122,7 +123,7 @@ class App extends React.Component {
         game_genre_id: ""
       }
     }))
-    const game = await postGame(formData)
+    const game = await postGame(formData.game_genre_id, formData)
       ;
     this.setState(prevState => ({
       games: [...prevState.games,
@@ -133,25 +134,11 @@ class App extends React.Component {
   handleEditGameSubmit = async (id, game_genre_id) => {
     let formData = this.state.formData;
     formData.game_genre_id = game_genre_id
-    console.log(formData)
 
     const game = await putGame(id, formData);
-
-    this.setState(prevState => ({
-      formData: {
-        name: "",
-        description: "",
-        img_url: "",
-        game_genre_id: ""
-      }
-    }))
-    this.setState(prevState => ({
-      games: [...prevState.games,
-        game]
-    }))
   }
 
-
+  
 
   render() {
     const { currentUser } = this.state;
@@ -203,15 +190,16 @@ class App extends React.Component {
               handleDelete={this.handleDelete}
               genre_id={props.match.params.genre_id} />
           )} />
-          <Route path="/create_game"
+          <Route exact path="/genres/:id/create_game"
             render={(props) => (
               <CreateGamesForm
+                id={props.match.params.id}
                 formData={this.state.formData}
                 handleChange={this.handleChange}
                 handleAddGameSubmit={this.handleAddGameSubmit}
               />
             )} />
-          <Route path="/genres/:genre_id/games/:id/edit"
+          <Route exact path="/genres/:genre_id/games/:id/edit"
             render={(props) => {
               const { genre_id } = props.match.params
               const { id } = props.match.params

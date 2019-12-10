@@ -6,7 +6,7 @@ export default function CreateGamesForm(props) {
   return (
     <div id="info-data">
       <form className="game_data" onSubmit={props.handleAddGameSubmit}>
-         <label htmlFor="name">Name</label>
+        <label htmlFor="name">Name</label>
         <input
           type="text"
           name="name"
@@ -33,11 +33,11 @@ export default function CreateGamesForm(props) {
           onChange={props.handleChange}
         />
         <br />
+        <button className="add_game">Add Game</button>
       </form>
       <Link to={`/select_genre`}>
-            <button className="back_button">Back</button>
-          </Link>
-      <button className="add_game">Add Game</button>
+        <button className="back_button">Back</button>
+      </Link>
     </div>
   )
 }
