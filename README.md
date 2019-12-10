@@ -6,6 +6,8 @@
 
 ### !!!!!!Not all game genres will be in this app sadly since there are a lot of genres/sub-genres/hybrid-genres. Forgive me I love gaming, but it would get messy and crazy if all genres where in here. I will have more of an umbrella term with the genres.
 
+### P.S can you guess what consoles/game companies are being represented by the colors. Good Luck 
+
 
 ![](https://media.giphy.com/media/TTy5YmVmhmWhq/giphy.gif)
 
@@ -23,14 +25,18 @@
 ## ERD
 ![](https://github.com/Blackstarstorm/What-Player-Are-You-/blob/master/Screen%20Shot%202019-12-10%20at%201.48.00%20PM.png) 
 
-##  * Components
+##   Components
+### * CreateGamesForm
+### * EditGamesForm
+### * Home
 ### * LoginForm
 ### * RegisterForm
-### * QuizForm
+### * Header
+### * Footer
 ### * GameGenreForm
-### * GamesForm
-### * EditGamesForm
-### * ScoreForm 
+### * GamesList
+### * SelectGamesForm
+
 
 ## WireFrames
 ![](https://github.com/Blackstarstorm/What-Player-Are-You-/blob/master/Screen%20Shot%202019-11-28%20at%202.01.17%20PM.png)

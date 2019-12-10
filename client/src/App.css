@@ -19,17 +19,28 @@ header{
   flex-direction: row;
   justify-content: space-around;
 }
+header{
+  background: rgb(34, 34, 34);
+}
 header h1{
-  color:black
+  color: #0B46AC;
+}
+header h1:hover{
+  color: #2AB9C1;
+}
+header h2{
+  color: #0B46AC;
+}
+header h2:hover{
+  color: #2AB9C1;
 }
 a.title{
   text-decoration: none;
-  /* background-image: -webkit-linear-gradient(left, #E0F8F7, #585858, #fff); */
 }
 
 button#log_reg_button{
   border-radius: 4em;
-  border: 1px solid black;
+  border: 1px solid white;
   padding: 2em;
   margin-top: 1em;
   background: linear-gradient(to right, #DF0024,#F3C300, #00AC9F,#2E6DB4);
@@ -84,7 +95,7 @@ div#welcome{
 
 }
 button.logout{
-border: 2px solid black;
+border: 1px solid white;
 border-radius: 16em;
 margin-bottom: 2em;
 font-weight: bold;
@@ -178,7 +189,7 @@ div#background{
 button.game_genre_button{
   background: linear-gradient(to right, #e60012,#ff4554, #00c3e3,#989898,#414548);
   border-radius: 24px;
-  margin: 3em;
+  margin: 5em;
   padding: 1.5em;
   font-weight: bold;
   cursor: pointer;
@@ -264,14 +275,17 @@ div#games{
 footer{
   text-align: center;
   font-weight: bold;
-  background: linear-gradient(to right,#00AC9F, #2E6DB4);
+  background: rgb(34, 34, 34);
   position:fixed;
   width: 100%;
   height: 7em;
   bottom:0;
 }
 footer h2{
-color: black;
+  color: #0B46AC;
+}
+footer h2:hover{
+  color:#00AC9F;
 }
 footer div{
   display: flex;
