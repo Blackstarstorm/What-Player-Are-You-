@@ -2,10 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { getOneGameGenre } from '../services/api-helper';
 import FFsound from '../FFsound.mp3';
+import FFback from '../FFback.mp3';
 
 export default class GameGenreForm extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       genre: null
     }
@@ -21,6 +22,7 @@ export default class GameGenreForm extends React.Component {
 
   render() {
     let audioF = new Audio(FFsound);
+    let audioB = new Audio(FFback);
     const { genre } = this.state
     return (
       <div className='genre_type'>
@@ -45,7 +47,8 @@ export default class GameGenreForm extends React.Component {
               ))
           }
            <Link to={`/select_genre`}>
-            <button className="game_genre_button">Back</button>
+            <button onClick={async () =>
+            await audioB.play()}className="game_genre_button">Back</button>
           </Link>
 
           <Link onClick={async () =>

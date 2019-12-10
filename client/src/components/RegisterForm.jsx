@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { registerUser } from '../services/api-helper';
+import FFready from '../FFready.mp3'
 
 class RegisterForm extends React.Component {
   state = {
@@ -26,9 +27,11 @@ class RegisterForm extends React.Component {
   }
 
   render() {
-
+    let audioR = new Audio(FFready);
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onClick={async () =>
+        await audioR.play()}
+        onSubmit={this.handleSubmit}>
         <div className="sign-in">
           <h2>Register</h2>
           <label htmlFor="username">Username:</label>

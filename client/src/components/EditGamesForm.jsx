@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function EditGamesForm(props) {
   return (
@@ -35,6 +36,9 @@ export default function EditGamesForm(props) {
         />
         
       </form>
+      <Link to={`/select_genre`}>
+            <button className="back_button">Back</button>
+          </Link>
       <button className="edit_game">Edit</button>
     </div>
   )

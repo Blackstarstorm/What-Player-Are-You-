@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export default function CreateGamesForm(props) {
   const { formData } = props;
@@ -33,6 +34,9 @@ export default function CreateGamesForm(props) {
         />
         <br />
       </form>
+      <Link to={`/select_genre`}>
+            <button className="back_button">Back</button>
+          </Link>
       <button className="add_game">Add Game</button>
     </div>
   )
