@@ -2,6 +2,12 @@ import React from 'react';
 import './App.css';
 import { Route, withRouter } from 'react-router-dom';
 import axios from 'axios';
+import FFsound from './FFsound.mp3';
+import FFback from './FFback.mp3';
+import FFvictory from './FFvictory.mp3';
+import FFdelete from './FFdelete.mp3';
+import Game_over from './Game_over.mp3';
+import FFsave from './FFsave.mp3';
 import Home from './components/Home';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -137,8 +143,32 @@ class App extends React.Component {
 
     const game = await putGame(id, formData);
   }
-
+  /////////AudioFunctions (for functional comps.)///////
   
+  functionAudioF = async () => {
+    let audioF = new Audio(FFsound);
+    audioF.play();
+  }
+  functionAudioB = async () => {
+    let audioB = new Audio(FFback);
+    audioB.play();
+  }
+  functionAudioV = async () => {
+    let audioV = new Audio(FFvictory);
+    audioV.play();
+  }
+  functionAudioD = async () => {
+    let audioD = new Audio(FFdelete);
+    audioD.play();
+  }
+  functionAudioG = async () => { 
+    let audioG = new Audio(Game_over);
+    audioG.play();
+  }
+  functionAudioS = async () => {
+    let audioS = new Audio(FFsave);
+    audioS.play();
+  }
 
   render() {
     const { currentUser } = this.state;
@@ -148,6 +178,8 @@ class App extends React.Component {
           <Header
             currentUser={currentUser}
             handleLogout={this.handleLogout}
+            audioG={this.functionAudioG}
+            audioS={this.functionAudioS}
           />
 
           <Route path="/login" render={() => (
@@ -169,6 +201,7 @@ class App extends React.Component {
 
           <Route exact path="/" render={() => (
             <Home
+              audioF={this.functionAudioF}
               currentUser={currentUser}
             />)} />
 
@@ -193,6 +226,8 @@ class App extends React.Component {
           <Route exact path="/genres/:id/create_game"
             render={(props) => (
               <CreateGamesForm
+                audioV={this.functionAudioV}
+                audioB={this.functionAudioB}
                 id={props.match.params.id}
                 formData={this.state.formData}
                 handleChange={this.handleChange}
@@ -204,6 +239,8 @@ class App extends React.Component {
               const { genre_id } = props.match.params
               const { id } = props.match.params
               return <EditGamesForm
+                audioV={this.functionAudioV}
+                audioB={this.functionAudioB}
                 formData={this.state.formData}
                 handleChange={this.handleChange}
                 handleEditGameSubmit={this.handleEditGameSubmit}

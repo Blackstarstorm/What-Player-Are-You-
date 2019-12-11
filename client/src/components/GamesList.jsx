@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { getGenreGames, deleteGame } from '../services/api-helper';
 import FFsound from '../FFsound.mp3';
 import FFback from '../FFback.mp3';
-// import FFdelete from '../FFdelete.mp3';
+import FFdelete from '../FFdelete.mp3';
 
 export default class GamesList extends React.Component {
   constructor(props) {
@@ -33,6 +33,8 @@ export default class GamesList extends React.Component {
   render() {
     let audioF = new Audio(FFsound);
     let audioB = new Audio(FFback);
+   
+    ;
     
     const { games } = this.state
     return (
@@ -47,7 +49,7 @@ export default class GamesList extends React.Component {
                 <button onClick={async () =>
                   await audioF.play()} className="game_button">Edit Game</button>
               </Link>
-              <button id={game.id} className="game_button" onClick={this.handleDelete}> Delete </button>
+              <button onClick={this.handleDelete} id={game.id} className="game_button"> Delete </button>
             </div>
           ))
         }

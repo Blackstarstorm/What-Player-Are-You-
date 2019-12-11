@@ -33,10 +33,10 @@ export default function CreateGamesForm(props) {
           onChange={props.handleChange}
         />
         <br />
-        <button className="add_game">Add Game</button>
+        <button onClick={props.audioV} className="add_game">Add Game</button>
       </form>
       <Link to={`/select_genre`}>
-        <button className="back_button">Back</button>
+        <button onClick={props.audioB} className="back_button">Back</button>
       </Link>
     </div>
   )

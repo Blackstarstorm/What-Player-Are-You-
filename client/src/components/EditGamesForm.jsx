@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function EditGamesForm(props) {
-  console.log(props)
   return (
     <div>
       <form className="game_data" onSubmit={(event) => {
@@ -35,10 +34,10 @@ export default function EditGamesForm(props) {
           value={props.img_url}
           onChange={props.handleChange}
         />
-      <button className="edit_game">Edit</button>
+        <button onClick={props.audioV}className="edit_game">Edit</button>
       </form>
       <Link to={`/select_genre`}>
-            <button className="back_button">Back</button>
+        <button onClick={props.audioB} className="back_button">Back</button>
           </Link>
     </div>
   )
