@@ -1,6 +1,7 @@
 .App{ 
   text-align: center;
   background:url("https://res.cloudinary.com/dvysqqdqe/image/upload/v1575833263/leisure-activities-colorful-linear-icons-set-modern-pastime-digital-entertainment-thin-line-contour-symbols-various-gamer-devices-159822144_ks33e8.jpg");
+  font-family: 'Press Start 2P', cursive;
 }
 
 input {
@@ -23,17 +24,17 @@ header{
   background: rgb(34, 34, 34);
 }
 header h1{
-  color: #0B46AC;
+  background: linear-gradient(to bottom,#003791 45%, #25A8D8 65%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-header h1:hover{
-  color: #2AB9C1;
-}
+
 header h2{
-  color: #0B46AC;
+  background: linear-gradient(to bottom,#003791 45%, #25A8D8 65%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-header h2:hover{
-  color: #2AB9C1;
-}
+
 a.title{
   text-decoration: none;
 }
@@ -284,11 +285,12 @@ footer{
   height: 7em;
 }
 footer h2{
-  color: #0B46AC;
+  background: linear-gradient(to bottom,#003791 45%, #25A8D8 65%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 1em;
 }
-footer h2:hover{
-  color:#00AC9F;
-}
+
 footer div{
   display: flex;
   justify-content: center;

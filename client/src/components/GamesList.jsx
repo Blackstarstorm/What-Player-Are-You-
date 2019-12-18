@@ -30,10 +30,15 @@ export default class GamesList extends React.Component {
     alert(`${game.name} was DESTROYED!`)
   }
 
+  functionAudioD = async () => {
+    let audioD = new Audio(FFdelete);
+    audioD.play();
+  }
+
   render() {
     let audioF = new Audio(FFsound);
     let audioB = new Audio(FFback);
-   
+    
     ;
     
     const { games } = this.state
@@ -46,10 +51,10 @@ export default class GamesList extends React.Component {
               <h3>{game.description}</h3>
               <img className="game_pic" src={game.img_url} alt="game covers" />
               <Link to={`/genres/${game.game_genre.id}/games/${game.id}/edit`}>
-                <button onClick={async () =>
+                <button onClick={async () => 
                   await audioF.play()} className="game_button">Edit Game</button>
               </Link>
-              <button onClick={this.handleDelete} id={game.id} className="game_button"> Delete </button>
+              <button onClick={this.handleDelete } id={game.id} className="game_button"> Delete </button>
             </div>
           ))
         }
