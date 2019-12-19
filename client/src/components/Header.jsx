@@ -31,7 +31,7 @@ export default function Header(props) {
       <nav>
         {
           props.currentUser ?
-            <a href="#" onClick={props.handleLogout}>
+            <a href="/#" onClick={props.handleLogout}>
             </a>
             :
             <Link onClick={props.audioS} to="/login">

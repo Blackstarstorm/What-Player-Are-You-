@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import { Route, withRouter } from 'react-router-dom';
-import axios from 'axios';
 import FFsound from './FFsound.mp3';
 import FFback from './FFback.mp3';
 import FFvictory from './FFvictory.mp3';
@@ -143,6 +142,7 @@ class App extends React.Component {
 
     const game = await putGame(id, formData);
   }
+  
   /////////AudioFunctions (for functional comps.)///////
   
   functionAudioF = async () => {

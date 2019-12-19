@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 import FFsound from '../FFsound.mp3';
 
 export default class SelectGenreForm extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+
 
   render() {
     let audioF = new Audio(FFsound);
