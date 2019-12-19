@@ -35,6 +35,19 @@ header h2{
   -webkit-text-fill-color: transparent;
 }
 
+
+
+header h1:hover{
+  background: linear-gradient(to right, #DF0024 2%,#F3C300 40%, #00AC9F 80%,#2E6DB4 95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+header h2:hover{
+  background: linear-gradient(to right, #DF0024 25%,#F3C300 40%, #00AC9F 80%,#2E6DB4 95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 a.title{
   text-decoration: none;
 }
@@ -290,7 +303,11 @@ footer h2{
   -webkit-text-fill-color: transparent;
   margin-top: 1em;
 }
-
+footer h2:hover{
+  background: linear-gradient(to right, #DF0024 15%,#F3C300 45%, #00AC9F 80%,#2E6DB4 95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 footer div{
   display: flex;
   justify-content: center;
