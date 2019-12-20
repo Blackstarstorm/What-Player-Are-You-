@@ -27,12 +27,8 @@ export default class GamesList extends React.Component {
     this.setState(prevState => ({
       games: prevState.games.filter(game => game.id !== parseInt(id))
     }))
-    alert(`${game.name} was DESTROYED!`)
-  }
-
-  functionAudioD = async () => {
     let audioD = new Audio(FFdelete);
-    audioD.play();
+    await audioD.play();
   }
 
   render() {
@@ -54,7 +50,7 @@ export default class GamesList extends React.Component {
                 <button onClick={async () => 
                   await audioF.play()} className="game_button">Edit Game</button>
               </Link>
-              <button onClick={this.handleDelete } id={game.id} className="game_button"> Delete </button>
+              <button onClick={this.handleDelete} id={game.id} className="game_button"> Delete </button>
             </div>
           ))
         }
