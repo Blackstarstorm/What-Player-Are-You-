@@ -78,10 +78,12 @@ background:linear-gradient(to left,  #107C10,#3A3A3A,  #ffffff);
 
 input.username,.password {
   border-radius: 10em;
+  width: 50%;
+  margin: 0 auto;
 }
 
 input.username:hover {
-  color: grey;
+  color: black;
   opacity: 0.8;
   }
   
@@ -93,11 +95,13 @@ opacity: 0.8;
 
 button.sign-up{
   border-radius: 20em;
-  margin: 1em;
   color: white;
   background: linear-gradient(to right, #107C10,#3A3A3A,  #ffffff);
   cursor: pointer;
   font-weight: bold;
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 2em;
 }
 button.sign-up:hover{
   color: white;

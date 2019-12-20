@@ -182,7 +182,12 @@ class App extends React.Component {
             audioS={this.functionAudioS}
           />
 
-          <Route path="/login" render={() => (
+         
+        </header>
+
+        <main>
+
+        <Route path="/login" render={() => (
             <LoginForm
               handleLogin={this.handleLogin}
               authErrorMessage={this.state.authErrorMessage}
@@ -195,9 +200,6 @@ class App extends React.Component {
               authErrorMessage={this.state.authErrorMessage}
             />
           )} />
-        </header>
-
-        <main>
 
           <Route exact path="/" render={() => (
             <Home
