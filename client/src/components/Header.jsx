@@ -21,7 +21,9 @@ export default function Header(props) {
           props.currentUser ?
             <div id="welcome">
               <h2 >Welcome, {username}!</h2>
-              <button className="logout" onClick={() => { handleClick(); }}>LogOut</button>
+              <Link to="/"
+                onClick={() => { handleClick(); }}><button className="logout">LogOut</button>
+              </Link>
             </div>
             :
             <></>

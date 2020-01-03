@@ -115,7 +115,8 @@ div#welcome{
 button.logout{
 border: 1px solid white;
 border-radius: 16em;
-margin-bottom: 2em;
+margin-bottom: 1em;
+padding: 1.5em;
 font-weight: bold;
 background: linear-gradient(to right, #DF0024,#F3C300, #00AC9F,#2E6DB4);
 cursor: pointer;
